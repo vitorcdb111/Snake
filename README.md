@@ -1,5 +1,14 @@
-# Snake
-Game Snake em c++
+# Snake Game
+
+### Sobre o projeto:
+
+Projeto desenvolvido com base na aula de estrutura de dados, onde foi inicializado projeto com auxilio do professor Marcos Brusso. Desenvolvido em C++, uitiliza a biblioteca SFML.
+
+### Comandos:
+
+Utilize as setas do teclado ou (wasd) para se movimentar.
+
+### Para executar:
 
 Compilar:
 

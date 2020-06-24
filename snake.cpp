@@ -43,8 +43,6 @@ void draw_field(sf::RenderWindow &window, sf::RectangleShape &fieldBlock)
     {
         for(int j = 0; j < numCols; j++)
         {
-            /* fieldBlock.setPosition(j*blocksize, i*blocksize);
-            window.draw(fieldBlock); */
             spr_grass.setPosition(j*blocksize, i*blocksize);
             window.draw(spr_grass);
         }
@@ -293,17 +291,7 @@ int main()
                     speed -= 0.01;
                     auxcount = 0;
                 }
-                apple = random_position(snake); 
-                /* sf::SoundBuffer buffer_collect;
-                if(!buffer_collect.loadFromFile("Assets/Sounds/Pickup.wav"))
-                {
-                    //error
-                }
-
-                sf::Sound sound1;
-                sound1.setBuffer(buffer_collect);
-
-                sound1.play();          */         
+                apple = random_position(snake);       
             }
             else if(!gameOver)
             {
@@ -315,29 +303,6 @@ int main()
         
 
         // clear the window with black color
-        /* window.clear(sf::Color::Black);
-
-        sf::Text text_menu;
-        sf::Font font;
-
-        if(!font.loadFromFile("Assets/Font/helvetica-1.otf"))
-        {
-            //erro
-            //exit(EXIT_FAILURE);
-        }
-
-        text_menu.setFont(font);
-        text_menu.setString("Menu");
-        text_menu.setCharacterSize(100);
-        text_menu.setStyle(sf::Text::Bold);
-
-        text_menu.setPosition(210, 280);
-
-        window.clear(sf::Color::Black);
-
-        window.draw(text_menu);
-
-        sleep(5); */
 
         window.clear(sf::Color::Black);
 
@@ -350,17 +315,6 @@ int main()
         {
             //mostrar um texto de game over
             snakeBlock.setFillColor(sf::Color::Red);
-
-            //sf::RenderWindow go(sf::VideoMode(300, 300), "Game Over");
-
-            /* sf::Music music_go;
-
-            if(!music_go.openFromFile("Assets/Sounds/GameOver.wav"))
-            {
-                //error
-            }
-
-            music_go.play(); */
     
 
             sf::Text text_go;

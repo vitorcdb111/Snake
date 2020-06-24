@@ -2,7 +2,7 @@
 
 ### Sobre o projeto:
 
-Projeto desenvolvido com base na aula de estrutura de dados, onde foi inicializado o projeto com auxilio do professor Marcos Brusso. Desenvolvido em C++, uitiliza a biblioteca SFML.
+Projeto desenvolvido com base na aula de estrutura de dados, onde foi inicializado o projeto com auxilio do professor Marcos Brusso. Desenvolvido em C++, uitilizando a biblioteca SFML.
 
 ### Comandos:
 

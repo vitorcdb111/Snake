@@ -55,7 +55,7 @@ void draw_snake(sf::RenderWindow &window, sf::RectangleShape &snakeBlock, std::l
 {
     sf::Texture snake_tex;
 
-    if(!snake_tex.loadFromFile("Assets/Sprites/cobra.jpg", sf::IntRect(40, 40, 40, 40)))
+    if(!snake_tex.loadFromFile("Assets/Sprites/snake.jpg", sf::IntRect(40, 40, 40, 40)))
     {
         for(auto p: snake)
         {
@@ -114,7 +114,7 @@ void move_snake(std::list<point> &snake, sf::Keyboard::Key key, sf::Clock clock)
     }
     else if(key == sf::Keyboard::Escape)
     {
-        exit(EXIT_FAILURE);
+        clock.restart();
         //ENDGAME
     }
     else if(key == sf::Keyboard::F2)

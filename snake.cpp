@@ -213,13 +213,49 @@ int main()
     int count_apple = 0, auxcount = 0;
 
     sf::Keyboard::Key lastKey = sf::Keyboard::Left;
-
     sf::Music music;
-
     if(!music.openFromFile("Assets/Sounds/Song.wav"))
     {
         //error
     }
+    sf::Font font;
+    if(!font.loadFromFile("Assets/Font/helvetica-1.otf"))
+    {
+        //erro
+    }
+
+    sf::Text text_win;
+    text_win.setFont(font);
+    text_win.setString("YOU WIN!!");
+    text_win.setCharacterSize(100);
+    text_win.setStyle(sf::Text::Bold);
+    text_win.setPosition(210, 280);
+
+    sf::Text text_score;
+    text_score.setFont(font);
+    text_score.setString("Score = 0");
+    text_score.setCharacterSize(40);
+    text_score.setFillColor(sf::Color::White);
+    text_score.setPosition(450, 450);
+
+    sf::Text text_go;
+    text_go.setFont(font);
+    text_go.setString("GAME OVER!!");
+    text_go.setCharacterSize(100);
+    text_go.setStyle(sf::Text::Bold);
+    text_go.setPosition(210, 280);
+
+    sf::Text text_f2;
+    text_f2.setFont(font);
+    text_f2.setString("F2 - Reiniciar");
+    text_f2.setCharacterSize(40);
+    text_f2.setPosition(80, 30);
+
+    sf::Text text_esc;
+    text_esc.setFont(font);
+    text_esc.setString("ESC - Sair");
+    text_esc.setCharacterSize(40);
+    text_esc.setPosition(880, 30);
 
     music.play();
     
@@ -251,21 +287,7 @@ int main()
             if(snake.size() == (numCols * numRows))
             {
                 //voce venceu!
-                sf::RenderWindow win(sf::VideoMode(300, 300), "WIN");
-
-                sf::Text text_win;
-                sf::Font font;
-
-                if(!font.loadFromFile("Assets/Font/helvetica-1.otf"))
-                {
-                    //erro
-                }
-                text_win.setFont(font);
-                text_win.setString("YOU WIN!!");
-                text_win.setCharacterSize(100);
-                text_win.setStyle(sf::Text::Bold);
-
-                text_win.setPosition(210, 280);
+                //sf::RenderWindow win(sf::VideoMode(300, 300), "WIN");
 
                 window.clear(sf::Color::Black);
 
@@ -315,47 +337,12 @@ int main()
         {
             //mostrar um texto de game over
             snakeBlock.setFillColor(sf::Color::Red);
-    
 
-            sf::Text text_go;
-            sf::Font font;
+            window.clear(sf::Color::Black);
 
-            if(!font.loadFromFile("Assets/Font/helvetica-1.otf"))
-            {
-                //erro
-                //exit(EXIT_FAILURE);
-            }
-
-            sf::Text text_score;
-            text_score.setFont(font);
-            text_score.setString("Score = 0");
-            text_score.setCharacterSize(40);
-            text_score.setFillColor(sf::Color::White);
-            text_score.setPosition(450, 450);
             std::stringstream ss;
             ss << "Score = " << count_apple;
             text_score.setString(ss.str());
-
-            text_go.setFont(font);
-            text_go.setString("GAME OVER!!");
-            text_go.setCharacterSize(100);
-            text_go.setStyle(sf::Text::Bold);
-
-            sf::Text text_f2;
-            text_f2.setFont(font);
-            text_f2.setString("F2 - Reiniciar");
-            text_f2.setCharacterSize(40);
-            text_f2.setPosition(80, 30);
-
-            sf::Text text_esc;
-            text_esc.setFont(font);
-            text_esc.setString("ESC - Sair");
-            text_esc.setCharacterSize(40);
-            text_esc.setPosition(880, 30);
-
-            text_go.setPosition(210, 280);
-
-            window.clear(sf::Color::Black);
 
             window.draw(text_go);
             window.draw(text_score);
